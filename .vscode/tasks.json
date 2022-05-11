@@ -6,7 +6,11 @@
         {
             "label": "Run locally",
             "type": "shell",
-            "command": "heroku local -f Procfile.windows"
+            "command": "heroku local",
+            "windows": {
+                "command": "heroku local -f Procfile.windows"
+            },
+            "problemMatcher": []
         }
     ]
 }
