@@ -35,6 +35,12 @@
         "problemMatcher": []
       },
       {
+        "label": "Migrate DB",
+        "type": "shell",
+        "command": "python manage.py migrate",
+        "problemMatcher": []
+      },
+      {
         "label": "Open Browser",
         "type": "shell",
         "command": "python -m webbrowser -n http://localhost:5000",
