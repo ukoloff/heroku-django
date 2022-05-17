@@ -3,14 +3,42 @@
     // for the documentation about the tasks.json format
     "version": "2.0.0",
     "tasks": [
-        {
-            "label": "Run locally",
-            "type": "shell",
-            "command": "heroku local",
-            "windows": {
-                "command": "heroku local -f Procfile.windows"
-            },
-            "problemMatcher": []
+      {
+        "label": "Run locally",
+        "type": "shell",
+        "command": "heroku local",
+        "windows": {
+          "command": "heroku local -f Procfile.windows"
+        },
+        "problemMatcher": [],
+        "group": {
+          "kind": "build",
+          "isDefault": true
         }
+      },
+      {
+        "label": "Init venv",
+        "type": "shell",
+        "command": "python -m venv venv",
+        "problemMatcher": []
+      },
+      {
+        "label": "Install dependencies",
+        "type": "shell",
+        "command": "pip install -r requirements.txt",
+        "problemMatcher": []
+      },
+      {
+        "label": "Build assets",
+        "type": "shell",
+        "command": "python manage.py collectstatic",
+        "problemMatcher": []
+      },
+      {
+        "label": "Open Browser",
+        "type": "shell",
+        "command": "python -m webbrowser -n http://localhost:5000",
+        "problemMatcher": []
+      }
     ]
 }
