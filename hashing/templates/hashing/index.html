@@ -1,0 +1,21 @@
+<!DOCTYPE html>
+<html>
+<head>
+  <meta charset="UTF-8">
+  <meta http-equiv="X-UA-Compatible" content="IE=edge">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Hashing test</title>
+</head>
+<body>
+  <form>
+    <input type="text" name="q" value="{{ q }}">
+    <input type="submit" value="Show me!">
+  </form>
+  {% if q %}
+  <ul>
+    <li>Input: {{ q }}</li>
+    <li>Hash: </li>
+  </ul>
+  {% endif %}
+</body>
+</html>
