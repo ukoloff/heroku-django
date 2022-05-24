@@ -4,7 +4,7 @@ from random import choice
 
 def myHash(data: str) -> int:
     result = 0
-    for b in sha1(data.encode()).digest:
+    for b in sha1(data.encode()).digest():
         result = (result * 256 + b) % 2147483647
     return result
 
@@ -16,5 +16,6 @@ def response(req: int, salt: str = '') -> int:
 
 
 def checkResponse(req: int, resp: int) -> bool:
-    return any(resp == response(req, chr(c))
-               for c in choice(range(ord('A'), ord('Z')+1)))
+    return any(
+        resp == response(req, chr(c))
+        for c in range(ord('A'), ord('Z')+1))
